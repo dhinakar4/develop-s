@@ -1,0 +1,22 @@
+#text{
+    color: rgb(102, 104, 245);
+}
+.bg{
+    height: 770px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-style: italic;
+    font-family: serif;
+    background-image: url(../public/istockphoto-1322277517-612x612.jpg);
+}
+div ~ p{
+    width: 60%;
+    background-color: lightsteelblue;
+    text-align: center;
+    margin-left: 250px;
+}
+p{
+    text-align: center;
+}
+
