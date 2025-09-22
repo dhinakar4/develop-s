@@ -4,11 +4,9 @@ import App from './App'
 function mycom(){
     return(
         <div>
-            <h6>Adding props to other component</h6>
-            <br />
-            <App name ="arun" age ={32} />
+            <App name ="arun" age ={32}/>
             <App name ="kavi" age={29}/>
-            <img src="../src/assets/img1.jpg" alt="" />
+            <App name ="diya" age={20}/>
         </div>
     )
-} export default mycom;
+} export default mycom

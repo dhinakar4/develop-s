@@ -7,6 +7,7 @@ import State from './State.jsx'
 import Props from './Props.jsx';
 import States from './States.jsx';
 import Mycom from './Mycom.jsx'
+import Form from './Form.jsx'
 
 
 
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
     {/* <State />
     <Props name = "jhon" age = "31" city = "North!" />
     <States /> */}
-    <Mycom />
+    {/* <Mycom /> */}
+    <Form />
   </StrictMode>,
 )
