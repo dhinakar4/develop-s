@@ -8,7 +8,8 @@ import Props from './Props.jsx';
 import States from './States.jsx';
 import Mycom from './Mycom.jsx'
 import Form from './Form.jsx'
-
+import App from './App.jsx'
+import Myprovider from './Myprovider.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -20,6 +21,9 @@ createRoot(document.getElementById('root')).render(
     <Props name = "jhon" age = "31" city = "North!" />
     <States /> */}
     {/* <Mycom /> */}
-    <Form />
+    {/* <Form /> */}
+    <Myprovider>
+      <App />
+    </Myprovider>
   </StrictMode>,
 )
