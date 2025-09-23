@@ -13,12 +13,17 @@
 import React from "react";
 import Myprovider from "./Myprovider";
 import Mycomponent from './Mycomponent';
+import Changebgcolor from "./Changebgcolor";
+import Changetext from "./Changetext";
  
 const App = () => {
     return (
-        <Myprovider>
-            <Mycomponent />
-        </Myprovider>
+        // <Myprovider>
+        //     <Mycomponent />
+        // </Myprovider>
+        <Changebgcolor>
+            <Changetext />
+        </Changebgcolor>
     )
 };
  export default App

@@ -4,7 +4,7 @@ import Mycontext from "./Mycontext";
 const Mycomponent = () => {
   const { data, setData } = useContext(Mycontext);
   const handle = () => {
-    setData({name :'Ajay',age :21,city :'Chennai',email :'ajays24@gmail.com'});
+    setData({name :'Max',age :21,city :'Chennai',email :'madmaxz@gmail.com'});
   };
 
   return (

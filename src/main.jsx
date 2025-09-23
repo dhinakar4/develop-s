@@ -10,6 +10,7 @@ import Mycom from './Mycom.jsx'
 import Form from './Form.jsx'
 import App from './App.jsx'
 import Myprovider from './Myprovider.jsx';
+import Changetext from './Changetext.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -22,8 +23,10 @@ createRoot(document.getElementById('root')).render(
     <States /> */}
     {/* <Mycom /> */}
     {/* <Form /> */}
-    <Myprovider>
+    {/* <Myprovider>
       <App />
-    </Myprovider>
+    </Myprovider> */}
+    <Changetext />
+
   </StrictMode>,
 )
