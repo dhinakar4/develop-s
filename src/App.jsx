@@ -9,7 +9,7 @@
 //     )
 // } export default app
 import React from "react";
-import Myproviders from "./Myproviders";
+import Provider from "./Provider";
 import Mycomponent from "./Mycomponent";
 import { Myprovider } from "./Mycontext";
 import ComponentA from "./ComponentA";
@@ -18,18 +18,18 @@ import ComponentC from "./ComponentC";
 
 const App = () => {
   return (
-    // <Myprovider>
+    // <Provider>
     //     <Mycomponent />
-    // </Myprovider>
+    // </Provider>
     // <Changebgcolor>
     //     <Changetext />
     // </Changebgcolor>
     <Myprovider>
-      <div>
+        
         <ComponentA />
         <ComponentB />
         <ComponentC />
-      </div>
+
     </Myprovider>
   );
 };

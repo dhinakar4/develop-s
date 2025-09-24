@@ -9,7 +9,7 @@ import States from "./States.jsx";
 import Mycom from "./Mycom.jsx";
 import Form from "./Form.jsx";
 import App from "./App.jsx";
-import Myproviders from "./Myproviders.jsx";
+import Provider from "./Provider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -21,10 +21,10 @@ createRoot(document.getElementById("root")).render(
     <States /> */}
     {/* <Mycom /> */}
     {/* <Form /> */}
-    {/* <Myprovider>
+    {/* <Provider>
       <App />
-    </Myprovider> */}
+    </Provider> */}
     {/* <Changetext /> */}
-    <App />
+    {/* <App /> */}
   </StrictMode>
 );
