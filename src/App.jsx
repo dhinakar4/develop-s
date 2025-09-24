@@ -1,5 +1,3 @@
-
-
 // function app(props){
 //     return(
 
@@ -11,19 +9,28 @@
 //     )
 // } export default app
 import React from "react";
-import Myprovider from "./Myprovider";
-import Mycomponent from './Mycomponent';
-import Changebgcolor from "./Changebgcolor";
-import Changetext from "./Changetext";
- 
+import Myproviders from "./Myproviders";
+import Mycomponent from "./Mycomponent";
+import { Myprovider } from "./Mycontext";
+import ComponentA from "./ComponentA";
+import ComponentB from "./ComponentB";
+import ComponentC from "./ComponentC";
+
 const App = () => {
-    return (
-        // <Myprovider>
-        //     <Mycomponent />
-        // </Myprovider>
-        <Changebgcolor>
-            <Changetext />
-        </Changebgcolor>
-    )
+  return (
+    // <Myprovider>
+    //     <Mycomponent />
+    // </Myprovider>
+    // <Changebgcolor>
+    //     <Changetext />
+    // </Changebgcolor>
+    <Myprovider>
+      <div>
+        <ComponentA />
+        <ComponentB />
+        <ComponentC />
+      </div>
+    </Myprovider>
+  );
 };
- export default App
+export default App;

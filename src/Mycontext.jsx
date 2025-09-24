@@ -2,29 +2,28 @@ import { createContext, useState } from "react";
 
  const Mycontext = createContext();
 
-export default Mycontext;
-
-export function Bgcontext({children}) {
-    const [bgcolor,setbgcolor] = useState('yellow');
-    const [text,settext] = useState('black');
-    const [size,setsize] = useState('10px')
+export const Myprovider = ({children}) => {
+    const [bgcolor,setBgcolor] = useState('yellow');
+    const [text,setText] = useState('black');
+    const [size,setSize] = useState('15px');
 
     const Changebgcolor = () => {
-        setbgcolor(bgcolor === "yellow" ? "lightblue" : "yellow")
-    }
+        setBgcolor(bgcolor === "yellow" ? "lightblue" : "yellow")
+    };
     
     const changetextcolor = () => {
-        settext(text === "black" ? "red" : "black")
-    }
+        setText(text === "black" ? "red" : "black")
+    };
 
     const changetextsize = () => {
-        setsize(size === "10px" ? "20px" : "10px")
-    }
+        setSize(size === "15px" ? "20px" : "15px")
+    };
 
     const resettheme = () => {
-        setbgcolor({bgcolor: 'red'});
-        settext({textcolor: 'black'});
-    }
+        setBgcolor('yellow');
+        setText('black');
+        setSize('15px');
+    };
 
     return (
         <div>
@@ -34,4 +33,4 @@ export function Bgcontext({children}) {
             </Mycontext.Provider>
         </div>
     )
-}
+}; export default Mycontext;
