@@ -45,9 +45,9 @@ function App  () {
       <Routes>
         <Route path="/" element ={<Homepage />} />
         <Route  path="/Login" element={<CompleteForm />} />
-        <Route path="/List" element={<Nested />} >
-          <Route index element={<Todolist />} />
-          <Route path="About" element={<About />} />
+        <Route path="/About" element={<Nested />} >
+          <Route index element={<About />} />
+          <Route path="List" element={<Todolist />} />
           <Route path="Contact" element={<Contact />} />
         </Route>
       </Routes>

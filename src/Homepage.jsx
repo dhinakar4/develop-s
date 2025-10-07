@@ -5,29 +5,33 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-
+const Home = () => (
+  <div>
+    <p>Welcome to Home!</p>
+  </div>
+);
 
 function Homepage () {
     return (
-        <div>
+        <div >
         {/* // <nav>
         //     <Link to="/Login" className="text-dark ms-3 ">Login</Link>
         //     <Link to="/List" className="text-dark ms-3 ">List</Link>
         // </nav> */}
-       
-    <Navbar expand="lg" className="bg-body-tertiary">
+       <div></div>
+    <Navbar expand="lg" style={{backgroundColor:'lemonchiffon'}}>
       <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand href="#home"></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/Login">Login</Nav.Link>
-            <Nav.Link as={Link} to="/List">List</Nav.Link>
+          <Nav className="me-auto ">
+            <Nav.Link as={Link} to="/" className="text-dark">Home</Nav.Link>
+            <Nav.Link as={Link} to="/About" className="text-dark">About</Nav.Link>
+            <Nav.Link as={Link} to="/Login" className="text-dark">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> <br />
 
         </div>  
     );
