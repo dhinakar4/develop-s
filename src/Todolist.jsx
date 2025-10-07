@@ -32,7 +32,7 @@ const Todolist = () => {
         <div className="fst-italic fw-bold">
         <h4 className="mt-3">TodoList:</h4>
         <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Add the details.."
-         style={{width:'10%',height:'30px',fontSize:'13px'}} className="p-1 fst-italic mt-3 ms-2 border border-2 border-secondary"/>
+         style={{width:'10%',height:'30px',fontSize:'13px'}} className="p-1 fst-italic mt-3 ms-2 border border-secondary"/>
         <button onClick={addtodo} className="btn btn-dark ms-2 mb-1 btn-sm rounded-pill">To Add</button>
         {todos.length > 0 ? (
         <table border= "2" className="align-items-center text-center ms-2 mt-1" style={{backgroundColor:'lightcyan'}}>
@@ -62,7 +62,9 @@ const Todolist = () => {
         </table>
          ):<p>no task</p>
         }
+      
         </div>
     );
+} ; export default Todolist
 
-}; export default Todolist;
+

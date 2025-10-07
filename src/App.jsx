@@ -15,22 +15,46 @@ import { Myprovider } from "./Mycontext";
 import ComponentA from "./ComponentA";
 import ComponentB from "./ComponentB";
 import ComponentC from "./ComponentC";
+import CompleteForm from "./Validation";
+import Todolist from "./Todolist";
+import Homepage from "./Homepage";
+import About from "./About";
+import Contact from "./Contact";
+import { BreadcrumbItem } from "react-bootstrap";
+import { BrowserRouter, Route, Routes,Outlet } from "react-router-dom";
+import Nested from "./Nested";
 
-const App = () => {
+function App  () {
   return (
-    // <Provider>
+    <div>
+    {/* // <Provider>
     //     <Mycomponent />
     // </Provider>
     // <Changebgcolor>
     //     <Changetext />
     // </Changebgcolor>
-    <Myprovider>
+    // <Myprovider>
         
-        <ComponentA />
-        <ComponentB />
-        <ComponentC />
+    //     <ComponentA />
+    //     <ComponentB />
+    //     <ComponentC />
 
-    </Myprovider>
+    // </Myprovider> */}
+    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element ={<Homepage />} />
+        <Route  path="/Login" element={<CompleteForm />} />
+        <Route path="/List" element={<Nested />} >
+          <Route index element={<Todolist />} />
+          <Route path="About" element={<About />} />
+          <Route path="Contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+   
+
+    </div> 
   );
 };
 export default App;

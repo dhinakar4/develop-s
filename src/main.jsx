@@ -12,6 +12,7 @@ import App from "./App.jsx";
 import Provider from "./Provider.jsx";
 import Todolist from "./Todolist";
 import Validation from "./Validation.jsx"
+import './index.css'
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -29,6 +30,7 @@ createRoot(document.getElementById("root")).render(
     {/* <Changetext /> */}
     {/* <App /> */}
     {/* <Todolist /> */}
-    <Validation />
+    {/* <Validation /> */}
+    <App />
   </StrictMode>
 );

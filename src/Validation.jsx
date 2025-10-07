@@ -34,7 +34,7 @@ export default function CompleteForm() {
       number:"",
       address: "",
       category: "",
-      checkbox: "",
+      // checkbox: "",
       radio: "",
       dob: "",
       file:"",
@@ -43,22 +43,22 @@ export default function CompleteForm() {
 
   const onSubmit = (data) => {
     console.log("Form Data:", data);
-    alert(JSON.stringify(data, null, 2));
+    // alert(JSON.stringify(data, null, 2));
   };
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      style={{ maxWidth: "400px", margin: "20px auto",}}
+      style={{ maxWidth: "350px", margin: "20px auto",  background: "linear-gradient(to top right,#9fe6a0 0%,#2f89fc 100%)"}}
       className="border border-shadow p-4 fst-italic fw-bold bg-light"
     >
-      <h2 className="text-center mb-4" style={{color:'black'}}>Form Validation</h2>
+      <h2 className="text-center mb-4" style={{color:'wheat'}}>Form Validation</h2>
 
       {/* First Name */}
       <div>
         <input
           {...register("firstName", { required: "First name is required",
-              minLength: { value: 4, message: "Min length is 4"
+              minLength: { value: 3, message: "Min length is 3"
            },})}
           placeholder="First name"
           className="form-control mb-2"
@@ -185,7 +185,7 @@ export default function CompleteForm() {
       </div>
 
       {/* Submit */}
-      <button type="submit" className="btn btn-info mb-1 ms-auto w-100 fw-bolder">
+      <button type="submit" className="btn btn-dark mb-1 ms-auto w-100 fw-bolder">
         Submit
       </button>
     </form>
