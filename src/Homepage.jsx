@@ -32,7 +32,7 @@ function Homepage () {
         </Navbar.Collapse>
       </Container>
     </Navbar> <br />
-
+    <p className="bg-light">Welcome Home!</p>
         </div>  
     );
 }; export default Homepage

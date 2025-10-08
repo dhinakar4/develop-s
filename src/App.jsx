@@ -21,8 +21,12 @@ import Homepage from "./Homepage";
 import About from "./About";
 import Contact from "./Contact";
 import { BreadcrumbItem } from "react-bootstrap";
-import { BrowserRouter, Route, Routes,Outlet } from "react-router-dom";
+import { BrowserRouter, Route, Routes,Outlet ,Navigate} from "react-router-dom";
 import Nested from "./Nested";
+import Userlist from "./Userlist";
+import Userdetail from "./Userdetail";
+import { ProductProvider } from "./Productcontext";
+
 
 function App  () {
   return (
@@ -40,19 +44,23 @@ function App  () {
     //     <ComponentC />
 
     // </Myprovider> */}
-    
+    <ProductProvider >
     <BrowserRouter>
       <Routes>
-        <Route path="/" element ={<Homepage />} />
+        {/* <Route path="/" element ={<Homepage />} />
         <Route  path="/Login" element={<CompleteForm />} />
         <Route path="/About" element={<Nested />} >
           <Route index element={<About />} />
           <Route path="List" element={<Todolist />} />
           <Route path="Contact" element={<Contact />} />
-        </Route>
+        </Route> */}
+         
+        <Route path="/" element={<Navigate to="/users" />} />
+        <Route path="/users" element={<Userlist />}/>
+        <Route path="/users/:id" element={<Userdetail />}/>
       </Routes>
     </BrowserRouter>
-   
+   </ProductProvider>
 
     </div> 
   );
