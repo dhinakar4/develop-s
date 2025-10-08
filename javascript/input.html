@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..//javascript/input.css">
+    <title>Document</title>
+</head>
+<body>
+    <h3><center>Register Form</center></h3>
+    <div><br><br>
+    <label for="name">Name :</label>
+    <input type="text" id="myid" placeholder="enter the name!"><br><br>
+    <label for="email">Email :</label>
+    <input type="text" id="myid1" placeholder="enter the email!"><br><br>
+    <label for="dob">Date of birth :</label>
+    <input type="date" id="myid5"><br><br>
+    <label for="password">Password :</label>
+    <input type="password" id="myid2" placeholder="enter the password!"><br><br>
+    <label for="address">Address :</label>
+    <input type="address" id="myid3" placeholder="enter the address!"><br><br>
+    <label for="gender">Gender :</label>
+    <input type="radio" name="gender" value="male" checked>male
+    <input type="radio" name="gender" value="female">female <br><br>
+     Select the country : <select name="country" id="myid4">
+        <option value="">Country</option>
+        <option value="usa">USA</option>
+        <option value="india">INDIA</option>
+        <option value="england">ENGLAND</option>
+    </select>   <br><br>
+    <button onclick="getvalue()">submit</button><br><br>
+    </div>
+
+    <script>
+        function getvalue(){
+            let input = document.getElementById('myid').value;
+            let input1 = document.getElementById('myid1').value;
+            let input5 = document.getElementById('myid5').value;
+            let input2 = document.getElementById('myid2').value;
+            let input3 = document.getElementById('myid3').value;
+            let input4 = document.getElementById('myid4').value;
+            const radio =[...document.getElementsByName('gender')].find(g => g.checked)?.value;
+            alert('Register successfully!');
+            console.log(input);
+            console.log(input1);
+            console.log(input2);
+            console.log(input3);
+            console.log(input4);
+            console.log(radio);
+        }
+    </script>
+</body>
+</html>

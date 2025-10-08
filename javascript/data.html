@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../javascript/data.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="sec1">
+        <h3 style="color: white;">Register Form</h3>
+    <div class="sec2">
+    <label for="name">Name :</label><br>
+    <input type="text" id="name">
+    <p id="result" style="color: red;"></p>
+    <label for="email">Email :</label>
+    <input type="email" id="email">
+    <p id="result1" style="color: red;"></p>
+    <label for="pwd">Password :</label>
+    <input type="password" id="pwd">
+    <p id="result2" style="color: red;"></p>
+    <label for="dob">Date of Birth :</label>
+    <input type="date" id="dob" max="2025-12-31">
+    <p id="result3" style="color: red;"></p>
+    <label for="gender">Gender :</label>
+    <input type="radio" name="gender" class="gender" value="male"> male
+    <input type="radio" name="gender" class="gender" value="female"> female
+    <p id="result4" style="color: red;"></p>
+    <label for="address">Address :</label><br>
+    <textarea name="address" id="addrs" rows="2" cols="20"></textarea><br>
+    <p id="result5" style="color: red;"></p>
+    <label for="select file">Select file :</label>
+    <input type="file" id="file">
+    <p id="result6" style="color: red;"></p>
+    <button onclick="data()" class="btn btn-info mt-4 mb-4">Register</button>
+    </div>
+    </div>
+    <script>
+        function data(){
+        const name = document.getElementById('name').value;
+        const regex = /^[A-Za-z'._@]{3,15}$/;
+        if (!regex.test(name)) {
+            document.getElementById('result').innerHTML = "enter the valid name!";
+        } else {
+            document.getElementById('result').innerHTML ="";
+        }
+
+        const email = document.getElementById('email').value;
+        const emailregex = /^[a-z@A-Z.]{4,15}$/;
+        if(!emailregex.test(email)){
+            document.getElementById('result1').innerHTML ='enter the valid email!';
+        }
+         else {
+            document.getElementById('result1').innerHTML = "";
+        }
+
+        const password = document.getElementById('pwd').value;
+        const pwdregex = /^[A-Z0-9'._@]{4,8}$/;
+        if(!pwdregex.test(password)){
+            document.getElementById('result2').innerHTML = "enter the strong password!";
+        } else {
+            document.getElementById('result2').innerHTML = "";
+        }
+        
+        const dat = document.getElementById('dob').value ;
+        if(dat===""){
+            document.getElementById('result3').innerHTML = "enter the date of birth!"
+        } else {
+            document.getElementById('result3').innerHTML = "";
+        }
+        
+        const radio =[...document.getElementsByName('gender')].find(g => g.checked)?.value;
+        const gender = document.querySelector('input[name="gender"]:checked');
+        if(!gender){
+          document.getElementById('result4').innerText = "select gender!" ;
+        } else  {
+            document.getElementById('result4').innerText = "";
+        }
+
+        const address = document.getElementById('addrs').value;
+        const addregex = /^[a-zA-Z0-9,']/;
+        if(!addregex.test(address)){
+            document.getElementById('result5').innerHTML = "enter the address!";
+        } else {
+            document.getElementById('result5').innerHTML = "";
+        }
+
+        const fileinput = document.getElementById('file');
+        const file = fileinput.files[0];
+        const fileregex = /\.(jpg|png|pdf)$/i;
+        if(!file){
+            document.getElementById('result6').innerHTML = "choose the file!";
+        } if (!fileregex.test(file.name)){
+            document.getElementById('result6').innerHTML = "Invalide file!";
+        } 
+        else {
+            document.getElementById('result6').innerHTML = "";
+        }
+    }
+    </script>
+</body>
+</html>
