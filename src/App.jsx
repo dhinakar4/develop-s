@@ -25,7 +25,7 @@ import { BrowserRouter, Route, Routes,Outlet ,Navigate} from "react-router-dom";
 import Nested from "./Nested";
 import Userlist from "./Userlist";
 import Userdetail from "./Userdetail";
-import { ProductProvider } from "./Productcontext";
+import { ProductProvider } from "./ProductContext";
 
 
 function App  () {

@@ -1,29 +1,45 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { ProductContext } from "./Productcontext";
+import { ProductContext } from "./ProductContext";
 import { useContext } from "react";
 
+function Userdetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { selectedProduct } = useContext(ProductContext);
 
+  const back = () => navigate("/users");
 
-function Userdetail () {
+  if (!selectedProduct) {
+    return <p className="text-danger">No Items Select!</p>;
+  }
 
-    const {id} = useParams();
-    const navigate = useNavigate();
-    const {selectedProduct} = useContext(ProductContext);
-
-    const back = () => navigate('/users');
-    
-    if (!selectedProduct) {
-        return <p>No Items Select!</p>;
-    }
-
-    return (
-        <div className="ms-3">
-            <h5 className="mt-3 text-success">Product Details!</h5>
-            {/* <p style={{textAlign:'left'}}>ID: {id}</p> */}
-            <p style={{textAlign:'left'}}>Name: {selectedProduct.name}</p>
-            <p style={{textAlign:'left'}}>Price: {selectedProduct.price}</p> 
-            <p style={{textAlign:'left'}}>Color: {selectedProduct.color}</p> 
-            <button onClick={back} className="btn btn-warning btn-sm">Back</button>
+  return (
+    <div className="col-md-2 ms-2 mt-3 ">
+      <h5 className="mt-3 text-success">Product Details!</h5>
+      <div className="card mx-auto shadow-lg bg-light border border-secondary">
+        <img
+          src={selectedProduct.Image}
+          className="card-img-top"
+          alt={selectedProduct.name}
+          style={{ objectFit: "contain",height:'200px',borderRadius:'10px' }}
+        />
+        <div className="card-body text-center">
+          {/* <p style={{textAlign:'left'}}>ID: {id}</p> */}
+          <h5 className="card-title">{selectedProduct.name}</h5>
+          <p className="card-text">
+            <strong>Price: </strong>
+            {selectedProduct.price} <br />
+            <strong>Color: </strong>
+            {selectedProduct.color}</p>
+          <button
+            onClick={back}
+            className="btn text-decoration-underline"
+          >
+            Back
+          </button>
         </div>
-    );
-}; export default Userdetail;
+      </div>
+    </div>
+  );
+}
+export default Userdetail;
