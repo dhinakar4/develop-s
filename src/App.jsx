@@ -8,7 +8,7 @@
 //         </div>
 //     )
 // } export default app
-import React from "react";
+import React, { useState } from "react";
 import Provider from "./Provider";
 import Mycomponent from "./Mycomponent";
 import { Myprovider } from "./Mycontext";
@@ -26,9 +26,17 @@ import Nested from "./Nested";
 import Userlist from "./Userlist";
 import Userdetail from "./Userdetail";
 import { ProductProvider } from "./ProductContext";
-
+import Productroute from "./Productroute";
+import Login from "./Login";
+import Dashboard from "./Dashboard";
+import { NavigateProvider } from "./ProductContext";
+import Homeup from "./Homeup";
+import Navbar from "./Navbar";
 
 function App  () {
+
+  const [isAuthenticated,setIsAuthenticated] = useState(false);
+
   return (
     <div>
     {/* // <Provider>
@@ -44,8 +52,10 @@ function App  () {
     //     <ComponentC />
 
     // </Myprovider> */}
-    <ProductProvider >
+    {/* <ProductProvider > */}
+    <NavigateProvider>
     <BrowserRouter>
+      <Navbar />
       <Routes>
         {/* <Route path="/" element ={<Homepage />} />
         <Route  path="/Login" element={<CompleteForm />} />
@@ -55,12 +65,24 @@ function App  () {
           <Route path="Contact" element={<Contact />} />
         </Route> */}
          
-        <Route path="/" element={<Navigate to="/users" />} />
+        {/* <Route path="/" element={<Navigate to="/users" />} />
         <Route path="/users" element={<Userlist />}/>
-        <Route path="/users/:id" element={<Userdetail />}/>
+        <Route path="/users/:id" element={<Userdetail />}/> */}
+
+        {/* <Route path="/" element={isAuthenticated ? 
+          (<Navigate to='/dashboard' replace />) :(<Navigate to='/login' replace />) } />
+        <Route path="/dashboard" element={<Productroute isAuthenticated={isAuthenticated}>
+          <Dashboard />
+        </Productroute>}/>
+        <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} /> */}
+
+        <Route path="/" element={<Homeup />} />
+        <Route path="/about" element={<About />}/>
+
       </Routes>
     </BrowserRouter>
-   </ProductProvider>
+    </NavigateProvider>
+   {/* </ProductProvider> */}
 
     </div> 
   );
