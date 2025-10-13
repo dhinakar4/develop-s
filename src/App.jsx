@@ -29,11 +29,11 @@ import { ProductProvider } from "./ProductContext";
 import Productroute from "./Productroute";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
-import { NavigateProvider } from "./ProductContext";
 import Homeup from "./Homeup";
 import Navbar from "./Navbar";
+import Blog from "./Blog";
 
-function App  () {
+function App() {
 
   const [isAuthenticated,setIsAuthenticated] = useState(false);
 
@@ -52,8 +52,7 @@ function App  () {
     //     <ComponentC />
 
     // </Myprovider> */}
-    {/* <ProductProvider > */}
-    <NavigateProvider>
+    <ProductProvider>
     <BrowserRouter>
       <Navbar />
       <Routes>
@@ -65,9 +64,8 @@ function App  () {
           <Route path="Contact" element={<Contact />} />
         </Route> */}
          
-        {/* <Route path="/" element={<Navigate to="/users" />} />
-        <Route path="/users" element={<Userlist />}/>
-        <Route path="/users/:id" element={<Userdetail />}/> */}
+        {/* <Route path="/" element={<Navigate to="/users" />} /> */}
+        
 
         {/* <Route path="/" element={isAuthenticated ? 
           (<Navigate to='/dashboard' replace />) :(<Navigate to='/login' replace />) } />
@@ -78,11 +76,13 @@ function App  () {
 
         <Route path="/" element={<Homeup />} />
         <Route path="/about" element={<About />}/>
+        <Route path="/blog" element={<Blog />} />
+        {/* <Route path="/users" element={<Userlist />}/>
+        <Route path="/users/:id" element={<Userdetail />}/> */}
 
       </Routes>
     </BrowserRouter>
-    </NavigateProvider>
-   {/* </ProductProvider> */}
+   </ProductProvider>
 
     </div> 
   );

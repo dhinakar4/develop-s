@@ -1,29 +1,21 @@
-import { Children, createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 
-// export const ProductContext = createContext();
+export const ProductContext = createContext();
 
-// export const ProductProvider = ({ children }) => {
-//     const [selectedProduct, setSelectedProduct] = useState(null);
-
-//     return (
-//         <ProductContext.Provider value={{ selectedProduct,setSelectedProduct}}>
-//             {children}
-//         </ProductContext.Provider>
-//     )
-// }
-
-
-   const NavigateContext = createContext();
-   
-   export const NavigateProvider = ({children}) => {
+export const ProductProvider = ({ children }) => {
+    const [selectedProduct, setSelectedProduct] = useState(null);
     const [allowAbout, setAllowAbout] = useState(false);
+    const [allowProduct, setAllowProduct] = useState(false);
+    const [allowBlog,setAllowBlog] = useState(false);
+
+
 
     return (
-        <NavigateContext.Provider value={{allowAbout,setAllowAbout}}>
+        <ProductContext.Provider value={{selectedProduct,setSelectedProduct,allowAbout,setAllowAbout,
+            allowProduct,setAllowProduct,allowBlog,setAllowBlog
+        }}>
             {children}
-        </NavigateContext.Provider>
+        </ProductContext.Provider>
     )
-   };
-
-   export const useNavigation = () => useContext(NavigateContext);
+};  export const useProduct = () => useContext(ProductContext);

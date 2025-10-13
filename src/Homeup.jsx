@@ -1,20 +1,33 @@
-import { useNavigate} from "react-router-dom";
-import { useNavigation } from "./ProductContext";
+import { useNavigate } from "react-router-dom";
+import { useProduct } from "./ProductContext";
 
+function Homeup() {
+  const navigate = useNavigate();
+  const { allowAbout, setAllowAbout ,allowBlog,setAllowBlog} = useProduct();
 
-function Homeup () {
-    const navigate = useNavigate();
-    const {visitDone, setVisitDone} = useNavigation();
+  const readMore = () => {
+    setAllowAbout(true); 
+    // setAllowBlog(false);
+    navigate("/about");
+  };
 
-    const read = () => {
-        setVisitDone(true);
-        navigate('/about');
-    };
+  return (
+    <div className="text-center mt-5">
+      <h3>Welcome to Home Page </h3>
+      {!allowAbout && (
+        <button onClick={readMore} className="btn btn-primary btn-sm rounded-pill">
+          Read More
+        </button>
+      )}
+      {allowAbout && (
+        <button
+        //  onClick={() => navigate("/")} 
+         className="btn btn-primary btn-sm rounded-pill">
+          Read More
+        </button>
+      )}
+    </div>
+  );
+}
 
-    return (
-        <div>
-            <h4>Home page</h4>
-            {!visitDone && (<button onClick={read} className="btn btn-underline">Readmore</button>)}
-        </div>
-    );
-} export default Homeup;
+export default Homeup;
