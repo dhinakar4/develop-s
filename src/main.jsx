@@ -1,36 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Home from "./Home.jsx";
-import Bootstrap from "./Bootstrap.jsx";
-import Boottemplate from "./Boottemplate.jsx";
-import State from "./State.jsx";
-import Props from "./Props.jsx";
-import States from "./States.jsx";
-import Mycom from "./Mycom.jsx";
-import Form from "./Form.jsx";
-import App from "./App.jsx";
-import Provider from "./Provider.jsx";
-import Todolist from "./Todolist";
-import Validation from "./Validation.jsx"
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import Apps from "./Apps.jsx";  
 import './index.css'
 
-createRoot(document.getElementById("root")).render(
+
+const root = createRoot(document.getElementById("root"));
+
+root.render(
   <StrictMode>
-    {/* <Home name ="This is a!"/> */}
-    {/* <Bootstrap/> */}
-    {/* <Boottemplate/> */}
-    {/* <State />
-    <Props name = "jhon" age = "31" city = "North!" />
-    <States /> */}
-    {/* <Mycom /> */}
-    {/* <Form /> */}
-    {/* <Provider>
-      <App />
-    </Provider> */}
-    {/* <Changetext /> */}
-    {/* <App /> */}
-    {/* <Todolist /> */}
-    {/* <Validation /> */}
-    <App />
+    <Provider store={store}>
+      <Apps />
+    </Provider>
   </StrictMode>
 );

@@ -32,6 +32,7 @@ import Dashboard from "./Dashboard";
 import Homeup from "./Homeup";
 import Navbar from "./Navbar";
 import Blog from "./Blog";
+import Redux from "./Redux";
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <div>
+      
     {/* // <Provider>
     //     <Mycomponent />
     // </Provider>
@@ -52,10 +54,10 @@ function App() {
     //     <ComponentC />
 
     // </Myprovider> */}
-    <ProductProvider>
+    {/* <ProductProvider>
     <BrowserRouter>
       <Navbar />
-      <Routes>
+      <Routes> */}
         {/* <Route path="/" element ={<Homepage />} />
         <Route  path="/Login" element={<CompleteForm />} />
         <Route path="/About" element={<Nested />} >
@@ -74,16 +76,30 @@ function App() {
         </Productroute>}/>
         <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} /> */}
 
-        <Route path="/" element={<Homeup />} />
+        {/* <Route path="/" element={<Homeup />} />
         <Route path="/about" element={<About />}/>
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog" element={<Blog />} /> */}
         {/* <Route path="/users" element={<Userlist />}/>
         <Route path="/users/:id" element={<Userdetail />}/> */}
-
+{/* 
       </Routes>
     </BrowserRouter>
-   </ProductProvider>
-
+   </ProductProvider> */}
+   {/* <Home name ="This is a!"/> */}
+    {/* <Bootstrap/> */}
+    {/* <Boottemplate/> */}
+    {/* <State />
+    <Props name = "jhon" age = "31" city = "North!" />
+    <States /> */}
+    {/* <Mycom /> */}
+    {/* <Form /> */}
+    {/* <Provider>
+      <App />
+    </Provider> */}
+    {/* <Changetext /> */}
+    {/* <App /> */}
+    {/* <Todolist /> */}
+    {/* <Validation /> */}
     </div> 
   );
 };
